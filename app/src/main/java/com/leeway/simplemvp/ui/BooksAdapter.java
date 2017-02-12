@@ -1,4 +1,4 @@
-package com.leeway.simplemvp;
+package com.leeway.simplemvp.ui;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.leeway.simplemvp.model.Book;
+import com.leeway.simplemvp.R;
+import com.leeway.simplemvp.data.model.Book;
 
 /**
  * Created by Lee Lorz on 2/11/2017.

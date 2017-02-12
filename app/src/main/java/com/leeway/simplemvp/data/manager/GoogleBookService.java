@@ -1,6 +1,6 @@
-package com.leeway.simplemvp.manager;
+package com.leeway.simplemvp.data.manager;
 
-import com.leeway.simplemvp.model.BookSearchResult;
+import com.leeway.simplemvp.data.model.BookSearchResult;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

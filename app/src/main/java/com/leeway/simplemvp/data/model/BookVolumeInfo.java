@@ -1,4 +1,4 @@
-package com.leeway.simplemvp.model;
+package com.leeway.simplemvp.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

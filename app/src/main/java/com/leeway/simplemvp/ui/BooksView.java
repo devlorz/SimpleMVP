@@ -1,6 +1,6 @@
-package com.leeway.simplemvp;
+package com.leeway.simplemvp.ui;
 
-import com.leeway.simplemvp.model.Book;
+import com.leeway.simplemvp.data.model.Book;
 
 import java.util.List;
 

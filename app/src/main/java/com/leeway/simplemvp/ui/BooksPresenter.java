@@ -1,7 +1,9 @@
-package com.leeway.simplemvp;
+package com.leeway.simplemvp.ui;
 
-import com.leeway.simplemvp.model.BookSearchResult;
-import com.leeway.simplemvp.model.BooksInteractor;
+import com.leeway.simplemvp.data.model.BookSearchResult;
+import com.leeway.simplemvp.data.model.BooksInteractor;
+
+import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,6 +17,7 @@ public class BooksPresenter {
     BooksView view;
     private BooksInteractor interactor;
 
+    @Inject
     public BooksPresenter(BooksInteractor interactor) {
         this.interactor = interactor;
     }

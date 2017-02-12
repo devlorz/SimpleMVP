@@ -1,4 +1,4 @@
-package com.leeway.simplemvp;
+package com.leeway.simplemvp.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,19 +8,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.leeway.simplemvp.manager.GoogleBookService;
-import com.leeway.simplemvp.model.Book;
-import com.leeway.simplemvp.model.BookSearchResult;
-import com.leeway.simplemvp.model.BooksInteractor;
-import com.leeway.simplemvp.model.BooksInteractorImpl;
+import com.leeway.simplemvp.App;
+import com.leeway.simplemvp.R;
+import com.leeway.simplemvp.data.manager.GoogleBookService;
+import com.leeway.simplemvp.data.model.Book;
+import com.leeway.simplemvp.data.model.BooksInteractor;
+import com.leeway.simplemvp.data.model.BooksInteractorImpl;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity implements BooksView{
 
@@ -28,12 +25,15 @@ public class MainActivity extends AppCompatActivity implements BooksView{
     Button btnSearch;
     TextView textNoDataFound;
 
-    BooksInteractor interactor;
     BooksPresenter presenter;
 
     BooksAdapter adapter;
     ListView listView;
 
+    @Inject
+    public void setPresenter(BooksPresenter presenter) {
+        this.presenter = presenter;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +42,7 @@ public class MainActivity extends AppCompatActivity implements BooksView{
 
         initInstances();
 
-        // Note: Don't do this on production code, use Dependency Injection instead
-        // to provide the BooksInteractor and the BooksPresenter to the View
-        interactor = new BooksInteractorImpl();
-        presenter = new BooksPresenter(interactor);
+        ((App) getApplication()).getAppComponent().inject(this);
         presenter.bind(this);
 
         adapter = new BooksAdapter(this, -1);

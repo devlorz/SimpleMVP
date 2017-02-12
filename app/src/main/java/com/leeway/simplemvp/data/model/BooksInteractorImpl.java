@@ -1,6 +1,6 @@
-package com.leeway.simplemvp.model;
+package com.leeway.simplemvp.data.model;
 
-import com.leeway.simplemvp.manager.GoogleBookService;
+import com.leeway.simplemvp.data.manager.GoogleBookService;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;

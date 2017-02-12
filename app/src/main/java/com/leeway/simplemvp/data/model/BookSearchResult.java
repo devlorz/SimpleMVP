@@ -1,4 +1,4 @@
-package com.leeway.simplemvp.model;
+package com.leeway.simplemvp.data.model;
 
 import com.google.gson.annotations.SerializedName;
 
